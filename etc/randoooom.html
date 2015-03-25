@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
+		<script src="js/jquery-1.8.2.min.js"></script>
+		<script src="js/jquery.mobile-1.2.0.min.js"></script>
+	
+		<script>
+		function choice(){
+
+			var firstChoice = document.getElementById('txtOne').value;
+			var secondChoice = document.getElementById('txtTwo').value;
+			var thirdChoice = document.getElementById('txtThree').value;
+			var fourthChoice = document.getElementById('txtFour').value;
+			var fifthChoice = document.getElementById('txtFive').value;
+			
+			var randNum = Math.floor(Math.random()*5+1);
+
+			if (randNum==1){
+				document.getElementById('txtStat').innerHTML = document.getElementById('txtOne').value;
+				myReset();
+			}else if (randNum==2){
+				document.getElementById('txtStat').innerHTML = document.getElementById('txtTwo').value;
+				myReset();
+			}else if (randNum==3){
+				document.getElementById('txtStat').innerHTML = document.getElementById('txtThree').value;
+				myReset();
+			}else if (randNum==4){
+				document.getElementById('txtStat').innerHTML = document.getElementById('txtFour').value;
+				myReset();
+			}else if (randNum==5){
+				document.getElementById('txtStat').innerHTML = document.getElementById('txtFive').value;
+				myReset();
+			}
+			
+			function myReset(){
+				document.getElementById('txtOne').value = "";
+				document.getElementById('txtTwo').value = "";
+				document.getElementById('txtThree').value = "";
+				document.getElementById('txtFour').value = "";
+				document.getElementById('txtFive').value = "";
+			}
+			
+			function choice1(){
+				var try="<img src=\"images"+Math.floor(1+Math.random()*16)+".jpg"\ />"
+				document.getElementById('haha').value=try;
+			}
+			
+		}
+		</script>
+	</head>
+	
+	<body>
+	
+	<div data-role="page" data-theme="b">
+		<div data-role="header" data-theme="e">
+			<h1>Food ng INA mo</h1>
+		</div>
+	
+		<div data-role="content">
+			<img id="haha"></img>
+			<input type = "text" placeholder="Enter first choice" id="txtOne"><br>
+			<input type = "text" placeholder="Enter second choice" id="txtTwo"><br>
+			<input type = "text" placeholder="Enter third choice" id="txtThree"><br>
+			<input type = "text" placeholder="Enter fourth choice" id="txtFour"><br>
+			<input type = "text" placeholder="Enter fifth choice" id="txtFive"><br>
+			<button onClick="choice()">Choose</button>
+			<button onClick="choice1()">Choose</button>
+			<h1 id="txtStat" style="text-align:center">Choice</h1>
+		</div>
+		
+		<div data-role="footer" data-position="fixed">
+			<p style="text-align:center">Created by: CopyPaste Productions</p>
+		</div>
+	</div>
+	</body>
+</html>
